@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-+RmWJQgQ2b7JxgdfLXV8WjSSa+QlJ0hAjtCgYzWQLI+q3LGCxJ0c/sX+I0fuKju4vB5UL5LLly0J0yI+fhJow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-6oJN6Jo9P6XOkg6hzb1iGQ1mxTCCXYntDgPz68E/C6CrZZTi1NjGgPJ9yapWb+Lzv/e/0bzP28/XTZ8WdI/IzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+  <h1 class="head">The Top 10 Basketball Essentials You Need to Succeed</h1>
+  <div class="phone-pad">
+    <p class="des1">Whether you're a beginner or a seasoned pro, having the right gear and equipment is essential for playing basketball at your best. From footwear to training aids, there are a variety of items that can help improve your game and keep you safe on the court. In this guide, we'll highlight the top 10 basketball essentials you need to succeed.</p>
+  
+  <h4>Coupons and Discounts to Help You Save on the Best Gear</h4>
+  <p class="des collapsed">Our website offers a range of coupons to help you save money on your favorite basketball essentials, including shoes, balls, clothing, and training aids. You'll find everything you need to elevate your game and achieve your basketball goals, from the latest performance-enhancing technologies to tried-and-true classics.</p>
+
+  <h4>Choose Products that Fit Your Style and Performance Needs</h4>
+  <p class="des">In addition to providing you with great deals and discounts, we also offer valuable information on the materials, strengths, and benefits of each essential, so you can choose the products that are right for you. Our comprehensive product descriptions and customer reviews give you an inside look at each item's features and performance, helping you make the most informed purchase decisions possible.</p>
+  
+  <p class="des">Whether you're a seasoned pro or a beginner just starting out, our website has everything you need to succeed on the court. So why wait? Start browsing our selection of basketball essentials today and take advantage of our unbeatable deals and expert advice!</p>
+  {% for essential in basketball_essentials %}
+    
+        <h3 class="name-pro">{{ essential.name }}</h3>
+        <div class="essent-des">
+          <p >{{ essential.description|linebreaks|safe }}</p>
+        </div>
+        <img class="essen-img" src="{{ essential.image.url }}" alt="{{ essential.name }}">
+        
+        <div class="essen-info">
+          
+          {% if essential.coupons %}
+            <p>Promo code: {{ essential.coupons }}</p>
+        {% endif %}
+        
+        <p>Benefits: {{ essential.benefits }}</p>
+        <p>Brand: {{ essential.brand }}</p>
+        <p>Material: {{ essential.material }}</p>
+        <p>{{ essential.num_stars }}</p>
+        </div>
+        
+      
+    {% endfor %}
+  </div>
+  <div class="foot">
+      <p class="foot-des-head">About us</p>
+      <p class="foot-des">Our company is dedicated to providing the highest quality products for athletes of all levels. With a focus on basketball essentials, we strive to equip players with the tools they need to succeed on and off the court.</p>
+      <p class="foot-des-head">Contact</p>
+      <p class="foot-des">For questions, feedback, and other inquiries</p>
+      <p class="foot-des">sportingessentials11@gmail.com</p>
+  </div>
+  
+</body>
+</html>
+
+<style>
+  .foot{
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    background-color: rgb(247, 246, 246);
+    height: 400px;
+
+  }
+
+  .foot-des{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    opacity: 0.6;
+  }
+
+  .foot-des-head{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .essen-info{
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.9;
+  }
+  
+  h4{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .essen-img{
+    width: 400px;
+    margin-left: 20%;
+  }
+  img{
+    max-width: 100%;
+    
+  }
+  .essent-des{
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .name-pro{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 250%;
+    font-weight: 600;
+  }
+  body{
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  .head{
+    font-size: 500%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+  .des1{
+    font-weight: 600;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .des{
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  @media only screen and (max-width: 480px) {
+  body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .head{
+    font-size: 300%;
+  }
+
+  .phone-pad{
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  .essen-img{
+    margin-left: 0;
+  }
+
+  .foot-des{
+    width: 70%;
+    
+  }
+
+
+}
+
+</style>
+
