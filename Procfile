@@ -1,1 +1,1 @@
-web: gunicorn sportsessentials.wsgi
+web gunicorn sportsessentials.wsgi:application --log-file -
