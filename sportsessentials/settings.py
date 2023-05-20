@@ -86,16 +86,7 @@ WSGI_APPLICATION = 'sportsessentials.wsgi.application'
 #}
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'dfaoog83m507vl',
-       'USER': 'erntwpstiviqjo',
-       'PASSWORD': '2f8b290dd04e48dbd6a054d90142a479ed61be0a670696909c9c55da9065baab',
-       'HOST': 'ec2-3-232-103-50.compute-1.amazonaws.com',
-       'PORT': '5432'
-
-
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
