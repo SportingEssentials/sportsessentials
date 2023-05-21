@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-
+import dj_database_url
 import os
 
 
@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'sportsessentials.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-#}
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}
 
 DATABASES = {
      'default': {
