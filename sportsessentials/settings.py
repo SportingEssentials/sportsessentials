@@ -89,7 +89,7 @@ DATABASES = {
         'USER': 'Hoopessentials',
         'PASSWORD': 'Geyerwally12345',
         'HOST': 'Hoopessentials.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
+        'PORT': '',
     }
 }
 
@@ -143,9 +143,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, 'static')
-#]
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static')
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
