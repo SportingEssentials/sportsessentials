@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-eq7=g=37ktpvyzrr75n*7aud7$d4$(+!ncr5$6b5#-po+8zmrc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -84,15 +84,10 @@ WSGI_APPLICATION = 'sportsessentials.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Hoopessentials$default',
-        'USER': 'Hoopessentials',
-        'PASSWORD': 'Geyerwally12345',
-        'HOST': 'Hoopessentials.mysql.pythonanywhere-services.com',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -135,21 +130,14 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Static files configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, 'media'),
-#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'sportsassenapp/static/media'),
+]
 
-
-
-#STATICFILES_DIRS = [
- #  os.path.join(BASE_DIR, 'static')
-#]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-
+# Media files configuration
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'sportsassenapp/static/media')
 
