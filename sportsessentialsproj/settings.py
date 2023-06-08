@@ -56,7 +56,8 @@ MIDDLEWARE = [
     
 ]
 
-ROOT_URLCONF = 'sportsessentials.urls'
+ROOT_URLCONF = 'sportsessentialsproj.urls'
+
 
 TEMPLATES = [
     {
@@ -74,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sportsessentials.wsgi.application'
+WSGI_APPLICATION = 'sportsessentialsproj.wsgi.application'
 
 
 # Database
