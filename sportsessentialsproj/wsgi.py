@@ -5,3 +5,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sportsessentialsproj.settings')
 
 
 application = get_wsgi_application()
+
+
+app = application
