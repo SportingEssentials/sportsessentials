@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-eq7=g=37ktpvyzrr75n*7aud7$d4$(+!ncr5$6b5#-po+8zmrc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'sportsessentialsproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'top10basketball',
+        'USER': 'Finn',
+        'PASSWORD': 'Geyerwally12345',
+        'HOST': 'top10basketball.cjx8w9fvnazv.ca-central-1.rds.amazonaws.com',
+        'PORT': 3306
     }
 }
 

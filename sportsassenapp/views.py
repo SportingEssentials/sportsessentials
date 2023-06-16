@@ -1,12 +1,15 @@
 from django.shortcuts import render
-from .models import BasketballEssential, SoccerEssential
+from .models import BasketballEssential
 
 
 def home(request):
     basketball_essentials = BasketballEssential.objects.all()
-    soccer_essentials = SoccerEssential.objects.all()
-    
-    # Calculate the number of stars for each basketball essential
+
+
+
+
+    # Add additional attributes as needed
+  # Calculate the number of stars for each basketball essential
     for essential in basketball_essentials:
         num_full_stars = int(essential.stars)
         num_half_stars = round((essential.stars - num_full_stars) * 2)
@@ -14,7 +17,8 @@ def home(request):
     
     context = {
         'basketball_essentials': basketball_essentials,
-        'soccer_essentials': soccer_essentials,
+    
+        
     }
     return render(request, 'home.html', context)
 
