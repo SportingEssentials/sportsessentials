@@ -9,5 +9,12 @@
             "src": "/(.*)",
             "dest": "sportsessentialsproj/wsgi.py"
         }
-    ]
+    ],
+    "env": {
+        "DATABASE_HOST": "top10basketball.cjx8w9fvnazv.ca-central-1.rds.amazonaws.com",
+        "DATABASE_NAME": "top10basketball",
+        "DATABASE_USER": "Finn",
+        "DATABASE_PASSWORD": "Geyerwally12345",
+        "DATABASE_PORT": "3306"
+      }
 }
