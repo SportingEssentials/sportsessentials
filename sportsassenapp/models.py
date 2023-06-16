@@ -24,19 +24,5 @@ class BasketballEssential(models.Model):
         return self.name
     
      
-    #1
- 
 
-class SoccerEssential(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    image = models.ImageField(upload_to='soccer_essentials')
-    rating = models.IntegerField()
-    coupons = models.CharField(max_length=200)
-    benefits = models.CharField(max_length=400)
-    stars = models.IntegerField()
-    brand = models.CharField(max_length=200)
-    material = models.CharField(max_length=200)
-    def __str__(self):
-        return self.name
 
