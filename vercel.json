@@ -1,20 +1,36 @@
 {
-    "builds": [{
+    "builds": [
+      {
         "src": "sportsessentialsproj/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "sportsessentialsproj/wsgi.py"
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.9",
+          "env": {
+            "MYSQL_UNIX_PORT": "/tmp/mysql.sock",
+            "PATH": "/usr/local/bin:/usr/bin:/bin:/vercel/path1/.vercel_build_output/.vercel/bin"
+          },
+          "install": {
+            "env": {
+              "PATH": "/usr/local/bin:/usr/bin:/bin:/vercel/path1/.vercel_build_output/.vercel/bin"
+            },
+            "args": ["--allow-root"]
+          }
         }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "sportsessentialsproj/wsgi.py"
+      }
     ],
     "env": {
-        "DATABASE_HOST": "top10basketball.cjx8w9fvnazv.ca-central-1.rds.amazonaws.com",
-        "DATABASE_NAME": "top10basketball",
-        "DATABASE_USER": "Finn",
-        "DATABASE_PASSWORD": "Geyerwally12345",
-        "DATABASE_PORT": "3306"
-      }
-}
+      "DATABASE_HOST": "top10basketball.cjx8w9fvnazv.ca-central-1.rds.amazonaws.com",
+      "DATABASE_NAME": "top10basketball",
+      "DATABASE_USER": "Finn",
+      "DATABASE_PASSWORD": "Geyerwally12345",
+      "DATABASE_PORT": "3306"
+    }
+  }
+  
